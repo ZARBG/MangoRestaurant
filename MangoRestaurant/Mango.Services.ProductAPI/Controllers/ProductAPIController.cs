@@ -9,12 +9,12 @@ namespace Mango.Services.ProductAPI.Controllers
     [ApiController]
     public class ProductAPIController : ControllerBase
     {
-        protected Responsedto _response;
+        protected ResponseDto _response;
         private IProductRepository _productRepository;
 
         public ProductAPIController(IProductRepository productRepository)
         {
-            _response = new Responsedto();
+            _response = new ResponseDto();
             _productRepository = productRepository;
         }
 

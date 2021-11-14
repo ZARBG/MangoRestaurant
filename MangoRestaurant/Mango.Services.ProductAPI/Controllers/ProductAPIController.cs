@@ -35,7 +35,7 @@ namespace Mango.Services.ProductAPI.Controllers
         }
         
         [HttpGet]
-        [Route("{id:int}")]
+        [Route("{id}")]
         public async Task<object> Get(int id)
         {
             try
@@ -84,11 +84,12 @@ namespace Mango.Services.ProductAPI.Controllers
         }
         
         [HttpDelete]
-        public async Task<object> Delete(int productId)
+        [Route("{id}")]
+        public async Task<object> Delete(int id)
         {
             try
             {
-                bool isSuccess = await _productRepository.DeleteProduct(productId);
+                bool isSuccess = await _productRepository.DeleteProduct(id);
                 _response.Result = isSuccess;
             }
             catch (Exception ex)

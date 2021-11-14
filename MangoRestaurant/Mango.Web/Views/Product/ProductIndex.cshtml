@@ -18,6 +18,9 @@
 			<th>Name</th>
 			<th>Category Name</th>
 			<th>Price</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -27,7 +30,7 @@
 				<td>@item.Name</td>
 				<td>@item.CategoryName</td>
 				<td>@((item.Price).ToString("c"))</td>
-				<td><a asp-action="ProductEdit" class="btn btn_success" asp-route-productId="@item.ProductId">
+				<td class="text-end"><a asp-action="ProductEdit" class="btn btn_success" asp-route-productId="@item.ProductId">
 						<i class="fas fa-edit"></i>
 					</a></td>
 				<td><a asp-action="ProductDelete" class="btn btn_danger" asp-route-productId="@item.ProductId">
